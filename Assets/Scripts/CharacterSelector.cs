@@ -22,21 +22,24 @@ public class CharacterSelector : MonoBehaviour
     // Tēlu apraksti — mainī uz saviem tekstiem!
     private readonly string[] descriptions =
     {
-        "Vel Parkt — spēcīgākais varonis Rīgā! Viņš ir apguvis " +
-        "seno bruņinieku mākslu un prot saceļties pat pret pūķiem. " +
-        "Dzimis 1990. gadā mazā ciemā pie Daugavas, Vel Parkt " +
+        "Pirmais varonis — spēcīgākais varonis Rīgā! Viņš ir apguvis " +
+        "seno bruņinieku mākslu un prot sacelties pat pret pūķiem. " +
+        "Dzimis mazā ciemā pie Daugavas, " +
         "sāka savu ceļu kā tirgotāja māceklis, bet likteņa pavērsieni " +
         "viņu aizveda uz lielām piedzīvojumu pasaulēm.",
 
-        "Cietoksnis — nepievaramais sargsargs ar dzelzs gribasspēku. " +
+        "Otrais varonis — ātrākais varonis visās zemēs! " +
+        "Viņš pārvietojas ar zibens ātrumu un prot redzēt " +
+        "notikumus pirms tie notiek. Maks ir labākais taktiķis " +
+        "un palīdz komandai spert pareizo soli katru reizi.",
+
+
+        "Trešais varonis — nepievaramais sargs ar dzelzs gribasspēku. " +
         "Viņš nekad nav pazaudējis nevienu kauju un " +
         "nepadodas pat visnelabvēlīgākajos apstākļos. " +
-        "Komanda var paļauties uz Cietoksni kā uz klinti.",
+        "Komanda var paļauties uz viņu kā uz klinti."
 
-        "Zibens Maks — ātrākais varonis visās zemēs! " +
-        "Viņš pārvietojas ar zibens ātrumu un prot redzēt " +
-        "notikumus pirms tie notiek. Maks ir labākais taktikis " +
-        "un palīdz komandai spert pareizo soli katru reizi."
+
     };
 
     private void Start()
@@ -56,6 +59,7 @@ public class CharacterSelector : MonoBehaviour
 
     private void OnCharacterChanged(int index)
     {
+        SoundManager.Instance.PlayCharacterSound(index);
         // Rāda tikai izvēlēto tēlu
         for (int i = 0; i < characterObjects.Length; i++)
             characterObjects[i].SetActive(i == index);

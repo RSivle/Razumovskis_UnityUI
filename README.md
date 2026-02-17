@@ -6,3 +6,4 @@ Ieskaite
 - [x] Izveidot dropdown, lai izvēlētos tēlus
 - [x] Izveidoju, ka var pārslēgties starp ainām.
 - [x] Pievienoju fona mūziku
+- [x] Pievienoti apraksti, katram varonim
